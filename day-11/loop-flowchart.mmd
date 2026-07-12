@@ -1,0 +1,7 @@
+flowchart TD
+    A[Input] --> B[LLM]
+    B --> C[Output]
+    C --> D{Check: Correct?}
+    D -->|Yes| E[Done]
+    D -->|No| F[Feedback / Critique]
+    F --> B
