@@ -1,0 +1,3 @@
+# Day 12 – Reflection
+
+Tools are the bridge between "LLM as a chatbot" and "LLM as an agent" because a chatbot can only talk — it reasons over what it already knows and stops there. The moment a model can call a tool, it's no longer limited to internal knowledge; it can fetch live data, run real computations, or take real actions in the world, then reason over the actual result instead of a guess. That's what turns it from something that answers questions into something that can actually complete tasks — checking an IP's real reputation instead of hallucinating one, or pulling real logs instead of assuming what they might say.
