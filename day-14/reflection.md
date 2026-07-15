@@ -1,0 +1,3 @@
+# Day 14 – Reflection
+
+LangChain is useful instead of calling the API directly because it standardizes the plumbing that would otherwise be rewritten by hand every time — prompt formatting, sending the request, and parsing the response into a usable structure. This matters most once output needs to be structured (like severity + action + IOC) rather than free text, since raw API calls would require writing custom parsing/validation logic for every single use case. It also makes swapping models or chaining multiple steps together much easier, since the prompt, LLM, and parser are separate, swappable pieces instead of one big block of custom API-handling code.
