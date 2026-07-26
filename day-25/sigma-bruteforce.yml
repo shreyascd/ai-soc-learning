@@ -1,0 +1,23 @@
+title: Brute Force Attack - Multiple Failed Logins
+id: 1234abcd-5678-efgh-ijkl-mnopqrstuvwx
+status: experimental
+description: Detects multiple failed login attempts from same source IP within short time window
+author: SOC Detection Team
+date: 2026-07-26
+modified: 2026-07-26
+tags:
+  - attack.t1110  # MITRE ATT&CK ID for brute force
+  - attack.credential_access
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625  # Failed logon
+  timeframe: 5m
+  condition: selection | count(Computer) by source_ip > 10
+falsepositives:
+  - Legitimate failed login attempts (user typos password)
+  - Scripts with hardcoded old credentials
+  - VPN reconnections with wrong credentials
+level: medium
